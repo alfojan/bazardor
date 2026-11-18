@@ -1,46 +1,27 @@
-
 import { betterAuth } from "better-auth";
+import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "@better-auth/mongo-adapter";
-import { mongoClient, mongoDb } from "@/lib/mongodb";
 
-function getRequiredEnv(name: string): string {
-  const value = process.env[name];
-
-  if (!value) {
-    throw new Error(`Missing required environment variable: ${name}`);
-  }
-
-  return value;
-}
+const client = new MongoClient(process.env.MONGODB_URI as string);
+const db = client.db("bazardor");
 
 export const auth = betterAuth({
-  database: mongodbAdapter(mongoDb, { client: mongoClient }),
-
-  baseURL: getRequiredEnv("BETTER_AUTH_URL"),
-  secret: getRequiredEnv("BETTER_AUTH_SECRET"),
+  database: mongodbAdapter(db, {
+    client,
+  }),
 
   emailAndPassword: {
     enabled: true,
-    requireEmailVerification: false,
-  },
-
-  // Allow linking existing accounts with trusted social providers
-  account: {
-    accountLinking: {
-      enabled: true,
-      trustedProviders: ["google", "github"],
-    },
   },
 
   socialProviders: {
     google: {
-      clientId: getRequiredEnv("GOOGLE_CLIENT_ID"),
-      clientSecret: getRequiredEnv("GOOGLE_CLIENT_SECRET"),
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     },
-
     github: {
-      clientId: getRequiredEnv("GITHUB_CLIENT_ID"),
-      clientSecret: getRequiredEnv("GITHUB_CLIENT_SECRET"),
+      clientId: process.env.GITHUB_CLIENT_ID as string,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     },
   },
 });

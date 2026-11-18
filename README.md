@@ -2,9 +2,13 @@
 
 BazarDor is a web application that helps users explore the latest prices of essential daily products in Bangladesh. Users can check product prices, compare market rates, browse products by category, and keep track of price changes through a simple and user-friendly interface.
 
+## 🌐 Live Website
+
+🔗 [Visit BazarDor — বাজার দর](https://bazardor-nine-rho.vercel.app/)
+
 ## ✨ Features
 
-- **Product Price Overview:** View the latest prices of essential products.
+- **Product Price Overview:** View the latest prices of essential daily products.
 - **Price Trends:** Explore products with increased or decreased prices.
 - **Product Details:** View product information, price comparisons, minimum and maximum prices, and market-wise prices.
 - **Category Browsing:** Browse products by categories such as rice, lentils, oil, vegetables, fish, meat, eggs, milk, and spices.
@@ -12,7 +16,7 @@ BazarDor is a web application that helps users explore the latest prices of esse
 - **User Authentication:** Register and sign in using email and password.
 - **Social Login:** Sign in using Google and GitHub.
 - **Profile Management:** Update your profile information.
-- **Responsive Design:** Enjoy the application on mobile, tablet, and desktop devices.
+- **Responsive Design:** Use the application on mobile, tablet, and desktop devices.
 - **Loading Skeletons:** See loading placeholders while product data is loading.
 - **Toast Notifications:** Receive feedback for authentication and other actions.
 - **Custom 404 Page:** Get a friendly error page when a requested page or product is not found.
@@ -133,9 +137,11 @@ bazardor/
 
 ## 🌐 Deployment
 
-The application can be deployed using [Vercel](https://vercel.com/).
+The application is deployed using [Vercel](https://vercel.com/).
 
-Before deployment:
+**Live Website:** [https://bazardor-nine-rho.vercel.app/](https://bazardor-nine-rho.vercel.app/)
+
+To deploy the application:
 
 1. Push the project to GitHub.
 2. Import the repository into Vercel.
