@@ -20,6 +20,11 @@
 # production
 /build
 
+# Preserve the local database left by the interrupted SQLite setup.
+/sqlite.db
+/sqlite.db-shm
+/sqlite.db-wal
+
 # misc
 .DS_Store
 *.pem
